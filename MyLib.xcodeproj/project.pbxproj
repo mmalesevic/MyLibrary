@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41924227ED00A40057969E /* OSLog+Extension.swift */; };
 		5C791E2F27D21B4000D673BA /* MyLibApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E2E27D21B4000D673BA /* MyLibApp.swift */; };
 		5C791E3127D21B4000D673BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3027D21B4000D673BA /* ContentView.swift */; };
 		5C791E3327D21B4600D673BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C791E3227D21B4600D673BA /* Assets.xcassets */; };
@@ -16,6 +17,11 @@
 		5C791E4527D21B4600D673BA /* MyLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E4427D21B4600D673BA /* MyLibTests.swift */; };
 		5C791E4F27D21B4600D673BA /* MyLibUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E4E27D21B4600D673BA /* MyLibUITests.swift */; };
 		5C791E5127D21B4600D673BA /* MyLibUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E5027D21B4600D673BA /* MyLibUITestsLaunchTests.swift */; };
+		5C791E6027D21B9A00D673BA /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E5F27D21B9A00D673BA /* Volume.swift */; };
+		5C791E6227D21F3F00D673BA /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6127D21F3F00D673BA /* ApiRequest.swift */; };
+		5C791E6427D2203200D673BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6327D2203200D673BA /* ApiError.swift */; };
+		5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3137027D2247D008F0136 /* URLSession+Extensions.swift */; };
+		5CF3137427D2423C008F0136 /* VolumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3137327D2423C008F0136 /* VolumeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C41924227ED00A40057969E /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
 		5C791E2B27D21B4000D673BA /* MyLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C791E2E27D21B4000D673BA /* MyLibApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibApp.swift; sourceTree = "<group>"; };
 		5C791E3027D21B4000D673BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +55,11 @@
 		5C791E4A27D21B4600D673BA /* MyLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C791E4E27D21B4600D673BA /* MyLibUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibUITests.swift; sourceTree = "<group>"; };
 		5C791E5027D21B4600D673BA /* MyLibUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5C791E5F27D21B9A00D673BA /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		5C791E6127D21F3F00D673BA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		5C791E6327D2203200D673BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		5CF3137027D2247D008F0136 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		5CF3137327D2423C008F0136 /* VolumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C41924127ED00880057969E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5C41924227ED00A40057969E /* OSLog+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		5C791E2227D21B4000D673BA = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +118,9 @@
 		5C791E2D27D21B4000D673BA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				5C41924127ED00880057969E /* Extensions */,
+				5CF3137227D2421A008F0136 /* ViewModel */,
+				5C791E5D27D21B4F00D673BA /* API */,
 				5C791E2E27D21B4000D673BA /* MyLibApp.swift */,
 				5C791E3027D21B4000D673BA /* ContentView.swift */,
 				5C791E3227D21B4600D673BA /* Assets.xcassets */,
@@ -131,6 +154,33 @@
 				5C791E5027D21B4600D673BA /* MyLibUITestsLaunchTests.swift */,
 			);
 			path = MyLibUITests;
+			sourceTree = "<group>";
+		};
+		5C791E5D27D21B4F00D673BA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5C791E5E27D21B7F00D673BA /* Models */,
+				5C791E6127D21F3F00D673BA /* ApiRequest.swift */,
+				5C791E6327D2203200D673BA /* ApiError.swift */,
+				5CF3137027D2247D008F0136 /* URLSession+Extensions.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5C791E5E27D21B7F00D673BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C791E5F27D21B9A00D673BA /* Volume.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CF3137227D2421A008F0136 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3137327D2423C008F0136 /* VolumeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,9 +313,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */,
+				5C791E6427D2203200D673BA /* ApiError.swift in Sources */,
+				5C791E6027D21B9A00D673BA /* Volume.swift in Sources */,
 				5C791E3827D21B4600D673BA /* Persistence.swift in Sources */,
+				5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */,
 				5C791E3127D21B4000D673BA /* ContentView.swift in Sources */,
+				5CF3137427D2423C008F0136 /* VolumeViewModel.swift in Sources */,
 				5C791E2F27D21B4000D673BA /* MyLibApp.swift in Sources */,
+				5C791E6227D21F3F00D673BA /* ApiRequest.swift in Sources */,
 				5C791E3B27D21B4600D673BA /* MyLib.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
