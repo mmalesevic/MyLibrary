@@ -10,23 +10,23 @@ import Foundation
 struct VolumeResultModel: Codable {
     var kind: String
     var totalItems: Int
-    var items: [Volume]
+    var items: [Volume]?
 }
 
 struct Volume: Codable, Identifiable  {
+    var selfLink: String?
+    var volumeInfo: VolumeInfo?
     var kind: String?
     var id: String?
     var etag: String?
-    var selfLink: URL?
-    var volumeInfo: VolumeInfo?
-    var pageCount: Int?
-    var printedPageCount: Int?
-    var dimensions: [String:String]?
-    var printType: String?
-    var categories: [String]?
-    var maturityRating: String?
-    var language: String?
-    var saleInfo: SaleInfo?
+//    var pageCount: Int?
+//    var printedPageCount: Int?
+//    var dimensions: [String:String]?
+//    var printType: String?
+//    var categories: [String]?
+//    var maturityRating: String?
+//    var language: String?
+//    var saleInfo: SaleInfo?
 }
 
 struct VolumeInfo: Codable {
@@ -34,7 +34,7 @@ struct VolumeInfo: Codable {
     var subtitle: String?
     var authors: [String]?
     var publisher: String?
-    var publishedDate: Date?
+    //var publishedDate: Date?
     var industryIdentifiers: [IndustryIdentifiers]?
 }
 

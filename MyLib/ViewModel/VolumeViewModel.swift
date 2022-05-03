@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class VolumeViewModel: NSObject, ObservableObject {
+@MainActor class VolumeViewModel: NSObject, ObservableObject {
     
     var apiRequest: ApiRequestProtocol
     @Published var volumes: [Volume]
@@ -20,17 +20,22 @@ class VolumeViewModel: NSObject, ObservableObject {
         isSearching = false
     }
     
-    @MainActor
     func lookupISBN(_ isbn: String) async throws {
         var urlComponents = URLComponents(string: "https://books.googleapis.com/books/v1/volumes")
         urlComponents?.queryItems = [URLQueryItem]()
         urlComponents?.queryItems?.append(URLQueryItem(name: "q", value: "isbn:\(isbn)"))
 
+        self.volumes.removeAll()
+        
         isSearching = true
         let volume: VolumeResultModel = try await apiRequest.getRequest(urlComponents?.url)
         isSearching = false
         
-        self.volumes.append(contentsOf: volume.items)
+        guard let items = volume.items, volume.totalItems > 0 else {
+            throw ApiError.noResult
+        }
+        
+        self.volumes.append(contentsOf: items)
     }
     
 }

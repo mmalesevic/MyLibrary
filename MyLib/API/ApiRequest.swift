@@ -13,7 +13,7 @@ protocol ApiRequestProtocol {
 }
 
 class ApiRequest: NSObject, ApiRequestProtocol {
- 
+    
     let session: URLSessionProtocol
     
     init(urlSession: URLSessionProtocol) {
@@ -24,7 +24,7 @@ class ApiRequest: NSObject, ApiRequestProtocol {
     internal func getRequest<T: Codable>(_ url:URL?) async throws -> T {
         
         guard let url = url else {
-            os_log("invalid URL:", log: .api, type: .error, url?.absoluteString ?? "-")
+            os_log("invalid URL: %@", log: .api, type: .error, url?.absoluteString ?? "-")
             throw ApiError.invalidUrl
         }
         var urlRequest = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.returnCacheDataElseLoad, timeoutInterval: 30.0)
@@ -37,12 +37,24 @@ class ApiRequest: NSObject, ApiRequestProtocol {
         
         switch httpUrlResponse.statusCode {
         case 200:
-            print(String(data: data, encoding: .utf8))
-            let responseObjecct = try await JSONDecoder().decode(T.self, from: data)
-            
-            return responseObjecct
+            do {
+                os_log("JSON Response: %@", log: OSLog.api, type: .debug, data.prettyPrintedJSONString)
+                let responseObjecct = try JSONDecoder().decode(T.self, from: data)
+                return responseObjecct
+            } catch DecodingError.typeMismatch(let _, let context) {
+                os_log("parsing error, type mismatch error: %@", log: OSLog.api, type: .error, "\(context.codingPath)")
+                throw ApiError.notFound(url: httpUrlResponse.url)
+            } catch DecodingError.valueNotFound(let type, _) {
+                os_log("parsing error, value not found: %@", log: OSLog.api, type: .error, "\(type)")
+                throw ApiError.notFound(url: httpUrlResponse.url)
+            } catch DecodingError.keyNotFound(let codingKey, _) {
+                os_log("parsing error, key not found: %@", log: OSLog.api, type: .error, "\(codingKey)")
+                throw ApiError.notFound(url: httpUrlResponse.url)
+            } catch {
+                throw error
+            }
         case 404:
-            os_log("invalid URL:", log: .api, type: .error)
+            os_log("Not Found URL: %@", log: .api, type: .error)
             throw ApiError.notFound(url: httpUrlResponse.url)
         case 400..<500:
             throw ApiError.unspecifiedClientError
