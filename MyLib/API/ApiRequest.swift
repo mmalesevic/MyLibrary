@@ -41,7 +41,7 @@ class ApiRequest: NSObject, ApiRequestProtocol {
                 os_log("JSON Response: %@", log: OSLog.api, type: .debug, data.prettyPrintedJSONString)
                 let responseObjecct = try JSONDecoder().decode(T.self, from: data)
                 return responseObjecct
-            } catch DecodingError.typeMismatch(let _, let context) {
+            } catch DecodingError.typeMismatch( _, let context) {
                 os_log("parsing error, type mismatch error: %@", log: OSLog.api, type: .error, "\(context.codingPath)")
                 throw ApiError.notFound(url: httpUrlResponse.url)
             } catch DecodingError.valueNotFound(let type, _) {
