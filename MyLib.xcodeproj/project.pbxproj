@@ -65,6 +65,7 @@
 		5C791E6127D21F3F00D673BA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		5C791E6327D2203200D673BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		5CC1E49B2824517E00884A16 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		5CC1E49D282908E500884A16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		5CCB0ED4282076030051DC6F /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		5C791E2227D21B4000D673BA = {
 			isa = PBXGroup;
 			children = (
+				5CC1E49D282908E500884A16 /* README.md */,
 				5C791E2D27D21B4000D673BA /* MyLib */,
 				5C791E4327D21B4600D673BA /* MyLibTests */,
 				5C791E4D27D21B4600D673BA /* MyLibUITests */,

@@ -4,7 +4,7 @@
 
 Simple app to keep track of you books
 
+## Scanning ISBN Codes
 
-
-
-
+Sanning of ISBN code is achieved with the [twostraws/CodeScanner](https://github.com/twostraws/CodeScanner) library. 
+Thanks to [Paul Hudson](https://twitter.com/twostraws) for providing such a nice piece of code :)
