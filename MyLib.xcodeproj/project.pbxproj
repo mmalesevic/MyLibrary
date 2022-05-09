@@ -20,6 +20,8 @@
 		5C791E6027D21B9A00D673BA /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E5F27D21B9A00D673BA /* Volume.swift */; };
 		5C791E6227D21F3F00D673BA /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6127D21F3F00D673BA /* ApiRequest.swift */; };
 		5C791E6427D2203200D673BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6327D2203200D673BA /* ApiError.swift */; };
+		5CC1E499282450C900884A16 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC1E498282450C900884A16 /* CodeScanner */; };
+		5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1E49B2824517E00884A16 /* SearchBar.swift */; };
 		5CCB0ED3282072BB0051DC6F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */; };
 		5CCB0ED5282076030051DC6F /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED4282076030051DC6F /* Data+Extensions.swift */; };
 		5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */; };
@@ -62,6 +64,8 @@
 		5C791E5F27D21B9A00D673BA /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		5C791E6127D21F3F00D673BA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		5C791E6327D2203200D673BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		5CC1E49B2824517E00884A16 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		5CC1E49D282908E500884A16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		5CCB0ED4282076030051DC6F /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CC1E499282450C900884A16 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +113,7 @@
 		5C791E2227D21B4000D673BA = {
 			isa = PBXGroup;
 			children = (
+				5CC1E49D282908E500884A16 /* README.md */,
 				5C791E2D27D21B4000D673BA /* MyLib */,
 				5C791E4327D21B4600D673BA /* MyLibTests */,
 				5C791E4D27D21B4600D673BA /* MyLibUITests */,
@@ -185,6 +191,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5CC1E49A2824516E00884A16 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				5CC1E49B2824517E00884A16 /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		5CCB0ED6282077D40051DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +210,7 @@
 		5CCB0ED7282077DA0051DC6F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5CC1E49A2824516E00884A16 /* SearchBar */,
 				5C791E3027D21B4000D673BA /* ContentView.swift */,
 				5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */,
 				5CCB0EDA282086050051DC6F /* BookTeaserView.swift */,
@@ -227,6 +242,9 @@
 			dependencies = (
 			);
 			name = MyLib;
+			packageProductDependencies = (
+				5CC1E498282450C900884A16 /* CodeScanner */,
+			);
 			productName = MyLib;
 			productReference = 5C791E2B27D21B4000D673BA /* MyLib.app */;
 			productType = "com.apple.product-type.application";
@@ -299,6 +317,9 @@
 				Base,
 			);
 			mainGroup = 5C791E2227D21B4000D673BA;
+			packageReferences = (
+				5CC1E497282450C900884A16 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 5C791E2C27D21B4000D673BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,6 +364,7 @@
 			files = (
 				5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */,
 				5C791E6427D2203200D673BA /* ApiError.swift in Sources */,
+				5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */,
 				5C791E6027D21B9A00D673BA /* Volume.swift in Sources */,
 				5C791E3827D21B4600D673BA /* Persistence.swift in Sources */,
 				5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */,
@@ -518,6 +540,7 @@
 				DEVELOPMENT_TEAM = AN4B7258WJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for ISBN-Code Scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -547,6 +570,7 @@
 				DEVELOPMENT_TEAM = AN4B7258WJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for ISBN-Code Scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -681,6 +705,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CC1E497282450C900884A16 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CC1E498282450C900884A16 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CC1E497282450C900884A16 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */ = {
