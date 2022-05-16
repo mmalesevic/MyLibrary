@@ -10,6 +10,17 @@ import XCTest
 
 class APIResponseInterceptorTests: XCTestCase {
     
+    func testNoResponse() async throws {
+
+        let sut = APIResponseInterceptor()
+        
+        XCTAssertThrowsError(try sut.intercept(response: nil)) {error in
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            XCTAssert(apiError == .noResult)
+        }
+    }
+    
     func testSuccessfulResponse() async throws {
         guard let url = URL(string: "https://malesevic.ch") else {
             throw ApiError.invalidUrl
@@ -70,6 +81,21 @@ class APIResponseInterceptorTests: XCTestCase {
                 let apiError = error as! ApiError
                 XCTAssertTrue(apiError == ApiError.unspecifiedServerError, "not expected error kind")
             }
+        }
+    }
+    
+    func test900Response() async throws {
+        guard let url = URL(string: "https://malesevic.ch") else {
+            throw ApiError.invalidUrl
+        }
+        let sut = APIResponseInterceptor()
+        
+        let response = HTTPURLResponse(url: url, statusCode: 900, httpVersion: nil, headerFields: nil)
+        
+        XCTAssertThrowsError(try sut.intercept(response: response), "handling error") { error in
+            XCTAssert(error is ApiError, "Not the expectedType APIError")
+            let apiError = error as! ApiError
+            XCTAssertTrue(apiError == ApiError.unspecifiedError, "not expected error kind for httpCode: 404")
         }
     }
 }

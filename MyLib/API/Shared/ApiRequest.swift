@@ -40,13 +40,13 @@ class ApiRequest: NSObject, ApiRequestProtocol {
             return responseObjecct
         } catch DecodingError.typeMismatch( _, let context) {
             os_log("parsing error, type mismatch error: %@", log: OSLog.api, type: .error, "\(context.codingPath)")
-            throw ApiError.notFound(url: urlResponse.url)
+            throw ApiError.invalidResponse(responseData: data)
         } catch DecodingError.valueNotFound(let type, _) {
             os_log("parsing error, value not found: %@", log: OSLog.api, type: .error, "\(type)")
-            throw ApiError.notFound(url: urlResponse.url)
+            throw ApiError.invalidResponse(responseData: data)
         } catch DecodingError.keyNotFound(let codingKey, _) {
             os_log("parsing error, key not found: %@", log: OSLog.api, type: .error, "\(codingKey)")
-            throw ApiError.notFound(url: urlResponse.url)
+            throw ApiError.invalidResponse(responseData: data)
         } catch {
             os_log("parsing error, unknown error %@", log: OSLog.api, type: .error, error.localizedDescription)
             throw error

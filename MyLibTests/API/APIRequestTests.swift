@@ -18,15 +18,114 @@ class APIRequestTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testRequestVolumes() async throws {
-        guard let mockUrlSession = MockUrlSession(filename: "VolumeApiModel", urlResponseCode: 200) else {
+    func testRequestInvalidUrl() async throws {
+        guard let mockUrlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "https://malesevic.ch", urlResponseCode: 200) else {
             throw ApiError.unspecifiedError
         }
         let sut = ApiRequest(urlSession: mockUrlSession, responseInterceptor: APIResponseInterceptor())
-        guard let url = URL(string: "https://malesevic.net") else { throw ApiError.unspecifiedError }
+
+        do {
+            let _: VolumeApiModel.APIResult = try await sut.getRequest(nil)
+        } catch {
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            XCTAssertEqual(apiError, .invalidUrl)
+        }
+    }
+    
+    func testRequestSucccessful() async throws {
+        guard let mockUrlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "https://malesevic.ch", urlResponseCode: 200) else {
+            throw ApiError.unspecifiedError
+        }
+        let sut = ApiRequest(urlSession: mockUrlSession, responseInterceptor: APIResponseInterceptor())
+        guard let url = URL(string: "https://malesevic.ch") else { throw ApiError.unspecifiedError }
+
+        let response: VolumeApiModel.APIResult = try await sut.getRequest(url)
+
+        XCTAssertNotNil(response)
+    }
+    
+    func testRequestTypeMismatchException() async throws {
+        guard let invalidResponseJSONdata = """
+{
+        "kind":"books#volumes",
+        "totalItems":"1"
+}
+""".data(using: .utf8) else {
+            XCTAssert(false, "Data could not have been loaded")
+            return
+        }
         
-        let lookup: VolumeApiModel.APIResult = try await sut.getRequest(url)
+        guard let mockUrlSession = MockUrlSession(responseData:invalidResponseJSONdata, urlString: "https://malesevic.ch", urlResponseCode: 200) else {
+            throw ApiError.unspecifiedError
+        }
+        let sut = ApiRequest(urlSession: mockUrlSession, responseInterceptor: APIResponseInterceptor())
+        guard let url = URL(string: "https://malesevic.ch") else { throw ApiError.unspecifiedError }
+
+        do {
+        let _: VolumeApiModel.APIResult = try await sut.getRequest(url)
+        } catch {
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            guard case .invalidResponse(responseData: _) = apiError else {
+                XCTAssert(false, "expected type mismatch error")
+                return
+            }
+        }
+    }
+    
+    func testRequestKeyNotFoundException() async throws {
+        guard let invalidResponseJSONdata = """
+{
+}
+""".data(using: .utf8) else {
+            XCTAssert(false, "Data could not have been loaded")
+            return
+        }
         
-        XCTAssertNotNil(lookup)
+        guard let mockUrlSession = MockUrlSession(responseData:invalidResponseJSONdata, urlString: "https://malesevic.ch", urlResponseCode: 200) else {
+            throw ApiError.unspecifiedError
+        }
+        let sut = ApiRequest(urlSession: mockUrlSession, responseInterceptor: APIResponseInterceptor())
+        guard let url = URL(string: "https://malesevic.ch") else { throw ApiError.unspecifiedError }
+
+        do {
+        let _: VolumeApiModel.APIResult = try await sut.getRequest(url)
+        } catch {
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            guard case .invalidResponse(responseData: _) = apiError else {
+                XCTAssert(false, "expected type mismatch error")
+                return
+            }
+        }
+    }
+    
+    func testRequestValueNotFoundException() async throws {
+        guard let invalidResponseJSONdata = """
+{
+    "kind": ""
+}
+""".data(using: .utf8) else {
+            XCTAssert(false, "Data could not have been loaded")
+            return
+        }
+        
+        guard let mockUrlSession = MockUrlSession(responseData:invalidResponseJSONdata, urlString: "https://malesevic.ch", urlResponseCode: 200) else {
+            throw ApiError.unspecifiedError
+        }
+        let sut = ApiRequest(urlSession: mockUrlSession, responseInterceptor: APIResponseInterceptor())
+        guard let url = URL(string: "https://malesevic.ch") else { throw ApiError.unspecifiedError }
+
+        do {
+        let _: VolumeApiModel.APIResult = try await sut.getRequest(url)
+        } catch {
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            guard case .invalidResponse(responseData: _) = apiError else {
+                XCTAssert(false, "expected type mismatch error")
+                return
+            }
+        }
     }
 }

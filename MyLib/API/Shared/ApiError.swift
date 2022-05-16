@@ -13,6 +13,7 @@ enum ApiError: Error, Equatable {
     case notFound(url: URL?)
     case noResult
     case unexpectedResponse
+    case invalidResponse(responseData: Data?)
     case unspecifiedClientError
     case unspecifiedServerError
     case unspecifiedError

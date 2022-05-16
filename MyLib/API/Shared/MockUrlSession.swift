@@ -12,7 +12,7 @@ class MockUrlSession: URLSessionProtocol {
     var responseData: Data
     var urlResponse: URLResponse
     
-    init?(responseData: Data, urlString: String = "https://malesevic.ch", urlResponseCode: Int) {
+    init?(responseData: Data, urlString: String, urlResponseCode: Int) {
         self.responseData = responseData
         guard let url = URL(string: urlString) else { return nil }
         guard let urlResponse: URLResponse = HTTPURLResponse(url: url, statusCode: urlResponseCode, httpVersion: nil, headerFields: nil) else { return nil }
@@ -20,7 +20,7 @@ class MockUrlSession: URLSessionProtocol {
         self.urlResponse = urlResponse
     }
     
-    init?(filename: String, urlString: String = "https://malesevic.ch", urlResponseCode: Int) {
+    init?(filename: String, urlString: String, urlResponseCode: Int) {
         guard let fileUrl = Bundle.main.url(forResource: filename, withExtension: "json") else { return nil }
         guard let url = URL(string: urlString) else { return nil }
         guard let urlResponse: URLResponse = HTTPURLResponse(url: url, statusCode: urlResponseCode, httpVersion: nil, headerFields: nil) else { return nil }

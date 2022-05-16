@@ -16,7 +16,7 @@ class APIResponseInterceptor: APIResponseInterceptorProtocol {
     func intercept(response: HTTPURLResponse?) throws {
         
         guard let response = response else {
-            throw ApiError.unexpectedResponse
+            throw ApiError.noResult
         }
         
         switch response.statusCode {
