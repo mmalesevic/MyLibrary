@@ -52,7 +52,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        let api = ApiRequest(urlSession: URLSession(configuration: URLSessionConfiguration.default))
+        let api = ApiRequest(urlSession: URLSession(configuration: URLSessionConfiguration.default), responseInterceptor: APIResponseInterceptor())
         
         return ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environmentObject(VolumeViewModel(apiRequest: api))

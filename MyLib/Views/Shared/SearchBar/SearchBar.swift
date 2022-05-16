@@ -30,6 +30,11 @@ struct SearchBar: View {
                 .padding()
                 .foregroundColor(Color.Primary)
                 .tint(Color.Primary)
+                .onAppear() {
+#if DEBUG
+                    searchTerm = "978-3-630-87473-9"
+#endif
+                }
             Button {
                 Task {
                     await search(for: searchTerm)
@@ -86,7 +91,7 @@ struct SearchBar: View {
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
         SearchBar()
-            .environmentObject(VolumeViewModel(apiRequest: ApiRequest(urlSession: URLSession.shared)))
+            .environmentObject(VolumeViewModel(apiRequest: ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())))
             .previewLayout(.sizeThatFits)
     }
 }

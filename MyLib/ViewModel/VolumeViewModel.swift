@@ -11,12 +11,12 @@ import SwiftUI
 @MainActor class VolumeViewModel: NSObject, ObservableObject {
     
     var apiRequest: ApiRequestProtocol
-    @Published var volumes: [Volume]
+    @Published var volumes: [VolumeApiModel]
     @Published var isSearching: Bool
     
     init(apiRequest: ApiRequestProtocol) {
         self.apiRequest = apiRequest
-        volumes = [Volume]()
+        volumes = [VolumeApiModel]()
         isSearching = false
     }
     
@@ -28,7 +28,7 @@ import SwiftUI
         self.volumes.removeAll()
         
         isSearching = true
-        let volume: VolumeResultModel = try await apiRequest.getRequest(urlComponents?.url)
+        let volume: VolumeApiModel.APIResult = try await apiRequest.getRequest(urlComponents?.url)
         isSearching = false
         
         guard let items = volume.items, volume.totalItems > 0 else {

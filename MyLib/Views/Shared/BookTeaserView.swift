@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookTeaserView: View {
-    var volume: Volume
+    var volume: VolumeApiModel
     
     var body: some View {
         VStack(alignment: .leading) {

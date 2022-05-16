@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct VolumeResultModel: Codable {
-    var kind: String
-    var totalItems: Int
-    var items: [Volume]?
-}
-
-struct Volume: Codable, Identifiable  {
+struct VolumeApiModel: Codable, Identifiable  {
     var selfLink: String?
-    var volumeInfo: VolumeInfo?
+    var volumeInfo: VolumeInfoApiModel?
     var kind: String?
     var id: String?
     var etag: String?
@@ -29,21 +23,29 @@ struct Volume: Codable, Identifiable  {
 //    var saleInfo: SaleInfo?
 }
 
-struct VolumeInfo: Codable {
+extension VolumeApiModel {
+    struct APIResult: Codable {
+        var kind: String
+        var totalItems: Int
+        var items: [VolumeApiModel]?
+    }
+}
+
+struct VolumeInfoApiModel: Codable {
     var title: String?
     var subtitle: String?
     var authors: [String]?
     var publisher: String?
     //var publishedDate: Date?
-    var industryIdentifiers: [IndustryIdentifiers]?
+    var industryIdentifiers: [IndustryIdentifiersApiModel]?
 }
 
-struct IndustryIdentifiers: Codable {
+struct IndustryIdentifiersApiModel: Codable {
     var type: String?
     var identifier: String?
 }
 
-struct SaleInfo: Codable {
+struct SaleInfoApiModel: Codable {
     var country: String?
     var saleability: String?
     var isEbook: Bool?

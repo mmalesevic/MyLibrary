@@ -11,7 +11,7 @@ import SwiftUI
 struct MyLibApp: App {
     let persistenceController = PersistenceController.shared
 
-    let apiRequest = ApiRequest(urlSession: URLSession.shared)
+    let apiRequest = ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())
     
     var body: some Scene {
         WindowGroup {

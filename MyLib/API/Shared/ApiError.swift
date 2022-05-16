@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum ApiError: Error {
+enum ApiError: Error, Equatable {
     case invalidUrl
     case notFound(url: URL?)
     case noResult
