@@ -10,6 +10,8 @@
 		5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */; };
 		5C286D402833FEB4004EDCEF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3F2833FEB4004EDCEF /* Validator.swift */; };
 		5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41924227ED00A40057969E /* OSLog+Extension.swift */; };
+		5C5F32EB2836C738006B32CC /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F32EA2836C738006B32CC /* ValidatorTests.swift */; };
+		5C5F32ED2836CD7B006B32CC /* VolumeApiModel_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */; };
 		5C791E2F27D21B4000D673BA /* MyLibApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E2E27D21B4000D673BA /* MyLibApp.swift */; };
 		5C791E3127D21B4000D673BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3027D21B4000D673BA /* ContentView.swift */; };
 		5C791E3327D21B4600D673BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C791E3227D21B4600D673BA /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModelTest.swift; sourceTree = "<group>"; };
 		5C286D3F2833FEB4004EDCEF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5C41924227ED00A40057969E /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
+		5C5F32EA2836C738006B32CC /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
+		5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VolumeApiModel_empty.json; sourceTree = "<group>"; };
 		5C791E2B27D21B4000D673BA /* MyLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C791E2E27D21B4000D673BA /* MyLibApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibApp.swift; sourceTree = "<group>"; };
 		5C791E3027D21B4000D673BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5C5F32E92836C71F006B32CC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5C5F32EA2836C738006B32CC /* ValidatorTests.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5C791E2227D21B4000D673BA = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 		5C791E4327D21B4600D673BA /* MyLibTests */ = {
 			isa = PBXGroup;
 			children = (
+				5C5F32E92836C71F006B32CC /* Util */,
 				5C286D3B2833FC14004EDCEF /* ViewModel */,
 				5CB1EA91282D8DD200189968 /* API */,
 			);
@@ -257,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB1EAA32831995D00189968 /* VolumeApiModel.json */,
+				5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -408,6 +422,7 @@
 			files = (
 				5C791E3627D21B4600D673BA /* Preview Assets.xcassets in Resources */,
 				5CB1EAA42831995D00189968 /* VolumeApiModel.json in Resources */,
+				5C5F32ED2836CD7B006B32CC /* VolumeApiModel_empty.json in Resources */,
 				5C791E3327D21B4600D673BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */,
+				5C5F32EB2836C738006B32CC /* ValidatorTests.swift in Sources */,
 				5CB1EA9E28318D4300189968 /* APIResponseInterceptorTests.swift in Sources */,
 				5CB1EA99282D96B000189968 /* APIRequestTests.swift in Sources */,
 				5CB1EA97282D957900189968 /* JSONDecoder+Extensions.swift in Sources */,

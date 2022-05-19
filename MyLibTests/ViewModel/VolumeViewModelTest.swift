@@ -35,26 +35,7 @@ import XCTest
         XCTAssertTrue(sut.volumes.isEmpty)
     }
     
-    func testLookupISBN_InvalidISBN_toShort() async throws {
-        guard let urlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
-            XCTAssertFalse(true, "creation of mock url session not possible")
-            return
-        }
-        let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
-        let sut = VolumeViewModel(apiRequest: apiRequest)
-        
-        do {
-            try await Task{
-                try await sut.lookupISBN("74739")
-            }.result.get()
-        } catch {
-            XCTAssert(error is ValidationError)
-        }
-        
-        XCTAssertTrue(sut.volumes.isEmpty)
-    }
-    
-    func testLookupISBN_InvalidISBN_InvalidCharacters() async throws {
+    func testLookupISBN_InvalidISBN_InvalidISBN() async throws {
         guard let urlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
             XCTAssertFalse(true, "creation of mock url session not possible")
             return
@@ -73,22 +54,7 @@ import XCTest
         XCTAssertTrue(sut.volumes.isEmpty)
     }
     
-    func testLookupISBN_validISBN_noDashes() async throws {
-        guard let urlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
-            XCTAssertFalse(true, "creation of mock url session not possible")
-            return
-        }
-        let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
-        let sut = VolumeViewModel(apiRequest: apiRequest)
-        
-        try await Task{
-            try await sut.lookupISBN("9783630874739")
-        }.result.get()
-        
-        XCTAssertTrue(!sut.volumes.isEmpty)
-    }
-    
-    func testLookupISBN_validISBN_dashed() async throws {
+    func testLookupISBN_validISBN_validISBN() async throws {
         guard let urlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
             XCTAssertFalse(true, "creation of mock url session not possible")
             return
@@ -102,5 +68,26 @@ import XCTest
         
         XCTAssertTrue(!sut.volumes.isEmpty)
     }
+    
+    func testLookupISBN_validISBN_empty() async throws {
+        guard let urlSession = MockUrlSession(filename: "VolumeApiModel_empty", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
+            XCTAssertFalse(true, "creation of mock url session not possible")
+            return
+        }
+        let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
+        let sut = VolumeViewModel(apiRequest: apiRequest)
+        
+        do {
+        try await Task{
+            try await sut.lookupISBN("978-3-63087-473-9")
+        }.result.get()
+        } catch {
+            XCTAssert(error is ApiError)
+            let apiError = error as! ApiError
+            XCTAssertTrue(apiError == .noResult)
+        }
+    }
+    
+    
     
 }
