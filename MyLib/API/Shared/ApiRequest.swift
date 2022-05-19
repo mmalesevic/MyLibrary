@@ -51,6 +51,5 @@ class ApiRequest: NSObject, ApiRequestProtocol {
             os_log("parsing error, unknown error %@", log: OSLog.api, type: .error, error.localizedDescription)
             throw error
         }
-        
     }
 }

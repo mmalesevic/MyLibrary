@@ -25,9 +25,7 @@ import SwiftUI
             return
         }
         
-        guard try Validator.ISBN(isbn).isValid() else {
-            return
-        }
+        try Validator.ISBN(isbn).isValid()
         
         var urlComponents = URLComponents(string: "https://books.googleapis.com/books/v1/volumes")
         urlComponents?.queryItems = [URLQueryItem]()

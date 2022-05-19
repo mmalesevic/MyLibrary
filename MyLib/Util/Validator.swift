@@ -16,25 +16,18 @@ enum ValidationError: Error {
 enum Validator {
     case ISBN(_ isbn: String)
     
-    func isValid() throws -> Bool {
+    func isValid() throws {
         switch self {
         case .ISBN(let isbn):
-            return try validateISBN(isbn)
+            try validateISBN(isbn)
         }
     }
     
-    private func validateISBN(_ isbn: String) throws -> Bool {
+    private func validateISBN(_ isbn: String) throws {
         let regexer = try NSRegularExpression(pattern: #"^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$"#)
         let matches = regexer.matches(in: isbn, range: NSMakeRange(0, isbn.count))
         guard matches.count == 1 else {
             throw ValidationError.invalidFormat
         }
-        return true
-    }
-}
-
-extension String {
-    func validate(_ validator: Validator) throws -> Bool {
-        try validator.isValid()
     }
 }
