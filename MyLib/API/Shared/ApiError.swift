@@ -17,4 +17,5 @@ enum ApiError: Error, Equatable {
     case unspecifiedClientError
     case unspecifiedServerError
     case unspecifiedError
+    case invalidRequest
 }

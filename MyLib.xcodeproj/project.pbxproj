@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */; };
+		5C286D402833FEB4004EDCEF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3F2833FEB4004EDCEF /* Validator.swift */; };
 		5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41924227ED00A40057969E /* OSLog+Extension.swift */; };
 		5C791E2F27D21B4000D673BA /* MyLibApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E2E27D21B4000D673BA /* MyLibApp.swift */; };
 		5C791E3127D21B4000D673BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3027D21B4000D673BA /* ContentView.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModelTest.swift; sourceTree = "<group>"; };
+		5C286D3F2833FEB4004EDCEF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		5C41924227ED00A40057969E /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
 		5C791E2B27D21B4000D673BA /* MyLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C791E2E27D21B4000D673BA /* MyLibApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibApp.swift; sourceTree = "<group>"; };
@@ -111,6 +115,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C286D3B2833FC14004EDCEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5C286D3E2833FEA0004EDCEF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5C286D3F2833FEB4004EDCEF /* Validator.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5C41924127ED00880057969E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +166,7 @@
 		5C791E2D27D21B4000D673BA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
+				5C286D3E2833FEA0004EDCEF /* Util */,
 				5CB1EAA12831991E00189968 /* Resources */,
 				5C791E5D27D21B4F00D673BA /* API */,
 				5C41924127ED00880057969E /* Extensions */,
@@ -170,6 +191,7 @@
 		5C791E4327D21B4600D673BA /* MyLibTests */ = {
 			isa = PBXGroup;
 			children = (
+				5C286D3B2833FC14004EDCEF /* ViewModel */,
 				5CB1EA91282D8DD200189968 /* API */,
 			);
 			path = MyLibTests;
@@ -423,6 +445,7 @@
 				5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */,
 				5CB1EA9C283189F800189968 /* APIResponseInterceptor.swift in Sources */,
 				5C791E3127D21B4000D673BA /* ContentView.swift in Sources */,
+				5C286D402833FEB4004EDCEF /* Validator.swift in Sources */,
 				5CF3137427D2423C008F0136 /* VolumeViewModel.swift in Sources */,
 				5C791E2F27D21B4000D673BA /* MyLibApp.swift in Sources */,
 				5C791E6227D21F3F00D673BA /* ApiRequest.swift in Sources */,
@@ -436,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */,
 				5CB1EA9E28318D4300189968 /* APIResponseInterceptorTests.swift in Sources */,
 				5CB1EA99282D96B000189968 /* APIRequestTests.swift in Sources */,
 				5CB1EA97282D957900189968 /* JSONDecoder+Extensions.swift in Sources */,

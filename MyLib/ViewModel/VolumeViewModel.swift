@@ -21,6 +21,14 @@ import SwiftUI
     }
     
     func lookupISBN(_ isbn: String) async throws {
+        guard !isbn.isEmpty else {
+            return
+        }
+        
+        guard try Validator.ISBN(isbn).isValid() else {
+            return
+        }
+        
         var urlComponents = URLComponents(string: "https://books.googleapis.com/books/v1/volumes")
         urlComponents?.queryItems = [URLQueryItem]()
         urlComponents?.queryItems?.append(URLQueryItem(name: "q", value: "isbn:\(isbn)"))
