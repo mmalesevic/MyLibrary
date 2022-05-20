@@ -1,17 +1,13 @@
 //
-//  ContentView.swift
+//  SearchView.swift
 //  MyLib
 //
-//  Created by Matej Malesevic on 04.03.22.
+//  Created by Matej Malesevic on 20.05.22.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @EnvironmentObject var volumeVM: VolumeViewModel
+struct SearchView: View {
     @State private var isSearching: Bool = false
     @State private var searchResults: [VolumeApiModel] = [VolumeApiModel]()
     
@@ -46,15 +42,13 @@ struct ContentView: View {
             
         }.background(Color.Primary)
     }
-    
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         let api = ApiRequest(urlSession: URLSession(configuration: URLSessionConfiguration.default), responseInterceptor: APIResponseInterceptor())
         
-        return ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        return SearchView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environmentObject(VolumeViewModel(apiRequest: api))
     }
 }

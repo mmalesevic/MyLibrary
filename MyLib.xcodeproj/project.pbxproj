@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */; };
 		5C286D402833FEB4004EDCEF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3F2833FEB4004EDCEF /* Validator.swift */; };
+		5C36AC792838080100A01082 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36AC782838080100A01082 /* SearchView.swift */; };
 		5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41924227ED00A40057969E /* OSLog+Extension.swift */; };
 		5C5F32EB2836C738006B32CC /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F32EA2836C738006B32CC /* ValidatorTests.swift */; };
 		5C5F32ED2836CD7B006B32CC /* VolumeApiModel_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModelTest.swift; sourceTree = "<group>"; };
 		5C286D3F2833FEB4004EDCEF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		5C36AC782838080100A01082 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5C41924227ED00A40057969E /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
 		5C5F32EA2836C738006B32CC /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VolumeApiModel_empty.json; sourceTree = "<group>"; };
@@ -275,31 +277,24 @@
 			path = MockData;
 			sourceTree = "<group>";
 		};
-		5CC1E49A2824516E00884A16 /* SearchBar */ = {
+		5CC1E49A2824516E00884A16 /* Search */ = {
 			isa = PBXGroup;
 			children = (
 				5CC1E49B2824517E00884A16 /* SearchBar.swift */,
+				5C36AC782838080100A01082 /* SearchView.swift */,
+				5CCB0EDA282086050051DC6F /* BookTeaserView.swift */,
 			);
-			path = SearchBar;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		5CCB0ED6282077D40051DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5CCB0ED7282077DA0051DC6F /* Shared */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5CCB0ED7282077DA0051DC6F /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				5CC1E49A2824516E00884A16 /* SearchBar */,
 				5C791E3027D21B4000D673BA /* ContentView.swift */,
 				5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */,
-				5CCB0EDA282086050051DC6F /* BookTeaserView.swift */,
+				5CC1E49A2824516E00884A16 /* Search */,
 			);
-			path = Shared;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5CF3137227D2421A008F0136 /* ViewModel */ = {
@@ -458,6 +453,7 @@
 				5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */,
 				5CCB0EDB282086050051DC6F /* BookTeaserView.swift in Sources */,
 				5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */,
+				5C36AC792838080100A01082 /* SearchView.swift in Sources */,
 				5CB1EA9C283189F800189968 /* APIResponseInterceptor.swift in Sources */,
 				5C791E3127D21B4000D673BA /* ContentView.swift in Sources */,
 				5C286D402833FEB4004EDCEF /* Validator.swift in Sources */,
