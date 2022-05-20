@@ -178,16 +178,16 @@
 		5C791E2D27D21B4000D673BA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				5C286D3E2833FEA0004EDCEF /* Util */,
-				5CB1EAA12831991E00189968 /* Resources */,
-				5C791E5D27D21B4F00D673BA /* API */,
-				5C41924127ED00880057969E /* Extensions */,
-				5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */,
 				5C791E2E27D21B4000D673BA /* MyLibApp.swift */,
 				5C791E3727D21B4600D673BA /* Persistence.swift */,
-				5C791E3427D21B4600D673BA /* Preview Content */,
-				5CF3137227D2421A008F0136 /* ViewModel */,
 				5CCB0ED6282077D40051DC6F /* Views */,
+				5CF3137227D2421A008F0136 /* ViewModel */,
+				5C791E5D27D21B4F00D673BA /* API */,
+				5C286D3E2833FEA0004EDCEF /* Util */,
+				5C41924127ED00880057969E /* Extensions */,
+				5CB1EAA12831991E00189968 /* Resources */,
+				5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */,
+				5C791E3427D21B4600D673BA /* Preview Content */,
 			);
 			path = MyLib;
 			sourceTree = "<group>";

@@ -12,19 +12,19 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @EnvironmentObject var volumeVM: VolumeViewModel
-    
-    
+    @State private var isSearching: Bool = false
+    @State private var searchResults: [VolumeApiModel] = [VolumeApiModel]()
     
     var body: some View {
         VStack{
             Section{
-                if volumeVM.volumes.count > 0 {
+                if searchResults.count > 0 {
                     ScrollView{
-                    ForEach(volumeVM.volumes) { volume in
+                    ForEach(searchResults) { volume in
                         BookTeaserView(volume: volume)
                     }}
                 } else {
-                    if volumeVM.isSearching {
+                    if isSearching {
                         Spacer()
                         ActivityIndicator()
                             .frame(width: 50, height: 50, alignment: .center)
@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             }
             HStack{
-                SearchBar()
+                SearchBar(isSearching: $isSearching, searchResults: $searchResults)
             }
             .background(Color.Secondary)
             .cornerRadius(25)

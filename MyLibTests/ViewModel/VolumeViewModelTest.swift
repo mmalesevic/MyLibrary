@@ -21,18 +21,18 @@ import XCTest
     }
     
     func testLookupISBN_emptyQuery() async throws {
-        guard let urlSession = MockUrlSession(filename: "VolumeApiModel", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
+        guard let urlSession = MockUrlSession(filename: "VolumeApiModel_empty", urlString: "http://malesevic.ch", urlResponseCode: 200) else {
             XCTAssertFalse(true, "creation of mock url session not possible")
             return
         }
         let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
         let sut = VolumeViewModel(apiRequest: apiRequest)
         
-        try await Task{
-            try await sut.lookupISBN("")
-        }.result.get()
-        
-        XCTAssertTrue(sut.volumes.isEmpty)
+        do {
+            let _ = try await sut.lookupISBN("")
+        } catch {
+            XCTAssert(error is ApiError)
+        }
     }
     
     func testLookupISBN_InvalidISBN_InvalidISBN() async throws {
@@ -43,15 +43,12 @@ import XCTest
         let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
         let sut = VolumeViewModel(apiRequest: apiRequest)
         
+        
         do {
-            try await Task{
-                try await sut.lookupISBN("3630874739Drt!")
-            }.result.get()
+            let _ = try await sut.lookupISBN("3630874739Drt!")
         } catch {
             XCTAssert(error is ValidationError)
         }
-        
-        XCTAssertTrue(sut.volumes.isEmpty)
     }
     
     func testLookupISBN_validISBN_validISBN() async throws {
@@ -62,11 +59,9 @@ import XCTest
         let apiRequest = ApiRequest(urlSession: urlSession, responseInterceptor: APIResponseInterceptor())
         let sut = VolumeViewModel(apiRequest: apiRequest)
         
-        try await Task{
-            try await sut.lookupISBN("978-3-63087-473-9")
-        }.result.get()
+        let volumes = try await sut.lookupISBN("978-3-63087-473-9")
         
-        XCTAssertTrue(!sut.volumes.isEmpty)
+        XCTAssertFalse(volumes.isEmpty)
     }
     
     func testLookupISBN_validISBN_empty() async throws {
@@ -78,9 +73,7 @@ import XCTest
         let sut = VolumeViewModel(apiRequest: apiRequest)
         
         do {
-        try await Task{
-            try await sut.lookupISBN("978-3-63087-473-9")
-        }.result.get()
+            let _ = try await sut.lookupISBN("978-3-63087-473-9")
         } catch {
             XCTAssert(error is ApiError)
             let apiError = error as! ApiError

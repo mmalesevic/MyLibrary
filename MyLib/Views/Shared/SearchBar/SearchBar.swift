@@ -11,6 +11,9 @@ import CodeScanner
 struct SearchBar: View {
     @EnvironmentObject var volumeVM: VolumeViewModel
     
+    @Binding var isSearching: Bool
+    @Binding var searchResults: [VolumeApiModel]
+    
     @State private var searchTerm: String = ""
     @State private var lookupError: Error? = nil
     @State private var displayError: Bool = false
@@ -36,6 +39,7 @@ struct SearchBar: View {
 #endif
                 }
             Button {
+                isSearching = true
                 Task {
                     await search(for: searchTerm)
                 }
@@ -58,14 +62,14 @@ struct SearchBar: View {
     
     private func search(for term: String) async {
         do {
-            try await volumeVM.lookupISBN(term)
-            print(volumeVM.volumes)
+            searchResults = try await volumeVM.lookupISBN(term)
+            isSearching = false
         }
-        catch ApiError.noResult{
-            
+        catch ApiError.noResult {
+            isSearching = false
         }
         catch let error {
-            volumeVM.isSearching = false
+            self.isSearching = false
             self.displayError = true
             self.lookupError = error
             
@@ -84,13 +88,11 @@ struct SearchBar: View {
             }
         }
     }
-    
-    
 }
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
+        SearchBar(isSearching: .constant(false), searchResults: .constant([VolumeApiModel]()))
             .environmentObject(VolumeViewModel(apiRequest: ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())))
             .previewLayout(.sizeThatFits)
     }
