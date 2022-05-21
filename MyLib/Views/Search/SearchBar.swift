@@ -34,7 +34,7 @@ struct SearchBar: View {
                 .foregroundColor(Color.Primary)
                 .tint(Color.Primary)
                 .onAppear() {
-#if DEBUG
+#if targetEnvironment(simulator)
                     searchTerm = "978-3-630-87473-9"
 #endif
                 }

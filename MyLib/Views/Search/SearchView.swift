@@ -17,7 +17,7 @@ struct SearchView: View {
                 if searchResults.count > 0 {
                     ScrollView{
                     ForEach(searchResults) { volume in
-                        BookTeaserView(volume: volume)
+                        VolumeTeaserView(volume: volume)
                     }}
                 } else {
                     if isSearching {
@@ -48,7 +48,7 @@ struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         let api = ApiRequest(urlSession: URLSession(configuration: URLSessionConfiguration.default), responseInterceptor: APIResponseInterceptor())
         
-        return SearchView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        return SearchView()
             .environmentObject(VolumeViewModel(apiRequest: api))
     }
 }
