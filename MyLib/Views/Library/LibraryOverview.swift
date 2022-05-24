@@ -10,9 +10,18 @@ import CoreData
 
 struct LibraryOverview: View {
     @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
+    @State var isSearching: Bool = false
+    @State var bookList: [VolumeApiModel] = [VolumeApiModel]()
     
     var body: some View {
         VStack {
+            SearchBar(isSearching: $isSearching, searchResults: $bookList)
+                .overlay(alignment: .top, content: {
+                    Color.Secondary
+                        .background(.regularMaterial)
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: 0)
+                })
             List(books) {book in
                 VStack{
                     Text(book.title ?? "unknown title")

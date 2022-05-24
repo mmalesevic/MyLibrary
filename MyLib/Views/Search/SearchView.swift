@@ -13,6 +13,13 @@ struct SearchView: View {
     
     var body: some View {
         VStack{
+            SearchBar(isSearching: $isSearching, searchResults: $searchResults)
+                .overlay(alignment: .top, content: {
+                    Color.Secondary
+                        .background(.regularMaterial)
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: 0)
+                })
             Section{
                 if searchResults.count > 0 {
                     ScrollView{
@@ -34,12 +41,6 @@ struct SearchView: View {
                     }
                 }
             }
-            HStack{
-                SearchBar(isSearching: $isSearching, searchResults: $searchResults)
-            }
-            .background(Color.Secondary)
-            .cornerRadius(25)
-            
         }.background(Color.Primary)
     }
 }

@@ -54,21 +54,7 @@ struct VolumeTeaserView: View {
                     Text(volume.volumeInfo?.subtitle ?? "title unknown")
                 }.padding()
                 Button {
-                    let book = Book(context: managedObjectContext)
-                    book.title = volume.volumeInfo?.title ?? "title missing"
-                    if let subtitle = volume.volumeInfo?.subtitle {
-                        book.subtitle = subtitle
-                    }
-                    book.id = UUID()
-                    book.volumeId = volume.id
-                    
-                    do {
-                        try managedObjectContext.save()
-                        isPresentingSheet.toggle()
-                    } catch {
-                        os_log("Error when saving volume as book: %{public}@", log: .data, type: .error, error.localizedDescription)
-                    }
-                    
+                   storeBook()
                 } label: {
                     Label("Save to Library", systemImage: "checkmark.shield")
                         .padding()
@@ -77,10 +63,28 @@ struct VolumeTeaserView: View {
             }
     }
 
-
-    func onDismiss() {
+    private func onDismiss() {
         
     }
+    
+    private func storeBook() {
+        
+        let book = Book(context: managedObjectContext)
+        book.title = volume.volumeInfo?.title ?? "title missing"
+        if let subtitle = volume.volumeInfo?.subtitle {
+            book.subtitle = subtitle
+        }
+        book.id = UUID()
+        book.volumeId = volume.id
+        
+        do {
+            try managedObjectContext.save()
+            isPresentingSheet.toggle()
+        } catch {
+            os_log("Error when saving volume as book: %{public}@", log: .data, type: .error, error.localizedDescription)
+        }
+    }
+    
 }
 
 //struct BookTeaserView_Previews: PreviewProvider {

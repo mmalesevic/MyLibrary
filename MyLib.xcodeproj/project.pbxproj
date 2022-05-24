@@ -34,6 +34,8 @@
 		5CB7EBFD283813D500231889 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7EBFC283813D500231889 /* DataController.swift */; };
 		5CC1E499282450C900884A16 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC1E498282450C900884A16 /* CodeScanner */; };
 		5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1E49B2824517E00884A16 /* SearchBar.swift */; };
+		5CC594F8283C25B100E6D285 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC594F7283C25B100E6D285 /* View+Extensions.swift */; };
+		5CC594FB283C25E100E6D285 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC594FA283C25E100E6D285 /* RoundedCorner.swift */; };
 		5CCB0ED3282072BB0051DC6F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */; };
 		5CCB0ED5282076030051DC6F /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED4282076030051DC6F /* Data+Extensions.swift */; };
 		5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */; };
@@ -89,6 +91,8 @@
 		5CB7EBFC283813D500231889 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		5CC1E49B2824517E00884A16 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5CC1E49D282908E500884A16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5CC594F7283C25B100E6D285 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		5CC594FA283C25E100E6D285 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		5CCB0ED4282076030051DC6F /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		5C286D3E2833FEA0004EDCEF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5CC594F9283C25D100E6D285 /* UI */,
 				5C286D3F2833FEB4004EDCEF /* Validator.swift */,
 			);
 			path = Util;
@@ -146,6 +151,7 @@
 				5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */,
 				5CCB0ED4282076030051DC6F /* Data+Extensions.swift */,
 				5CB1EA95282D92FD00189968 /* JSONDecoder+Extensions.swift */,
+				5CC594F7283C25B100E6D285 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -303,6 +309,14 @@
 				5CCB0EDA282086050051DC6F /* VolumeTeaserView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		5CC594F9283C25D100E6D285 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5CC594FA283C25E100E6D285 /* RoundedCorner.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		5CCB0ED6282077D40051DC6F /* Views */ = {
@@ -464,10 +478,12 @@
 			files = (
 				5CB1EAA0283194C800189968 /* MockUrlSession.swift in Sources */,
 				5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */,
+				5CC594F8283C25B100E6D285 /* View+Extensions.swift in Sources */,
 				5C791E6427D2203200D673BA /* ApiError.swift in Sources */,
 				5CB1EA96282D92FD00189968 /* JSONDecoder+Extensions.swift in Sources */,
 				5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */,
 				5CB7EBFA2838106000231889 /* LibraryOverview.swift in Sources */,
+				5CC594FB283C25E100E6D285 /* RoundedCorner.swift in Sources */,
 				5C791E6027D21B9A00D673BA /* VolumeApiModel.swift in Sources */,
 				5CB7EBFD283813D500231889 /* DataController.swift in Sources */,
 				5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */,
