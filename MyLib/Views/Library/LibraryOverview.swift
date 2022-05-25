@@ -6,28 +6,31 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct LibraryOverview: View {
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
-    @State var isSearching: Bool = false
-    @State var bookList: [VolumeApiModel] = [VolumeApiModel]()
+    @State private var searchTerm: String = ""
     
     var body: some View {
         VStack {
-            SearchBar(isSearching: $isSearching, searchResults: $bookList)
-                .overlay(alignment: .top, content: {
-                    Color.Secondary
-                        .background(.regularMaterial)
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: 0)
-                })
-            List(books) {book in
+            TextField("", text: $searchTerm)
+                .padding()
+                .foregroundColor(.Primary)
+                .background(Color.Secondary)
+                .tint(.Primary)
+                .onAppear() {
+#if targetEnvironment(simulator)
+                    searchTerm = "Book"
+#endif
+                }
+            QueryList(filterKey: "title", filterValue: searchTerm) { (book: Book) in
                 VStack{
                     Text(book.title ?? "unknown title")
                     Text(book.subtitle ?? "no subtitle")
                 }
+                .background(.yellow)
             }
+            Spacer()
+            
         }
     }
 }

@@ -13,7 +13,7 @@ struct SearchView: View {
     
     var body: some View {
         VStack{
-            SearchBar(isSearching: $isSearching, searchResults: $searchResults)
+            IsbnSearchBar(isSearching: $isSearching, searchResults: $searchResults)
                 .overlay(alignment: .top, content: {
                     Color.Secondary
                         .background(.regularMaterial)
