@@ -24,7 +24,7 @@ struct SearchView: View {
                 if searchResults.count > 0 {
                     ScrollView{
                     ForEach(searchResults) { volume in
-                        VolumeTeaserView(volume: volume)
+                        SearchResultTeaserView(volume: volume)
                     }}
                 } else {
                     if isSearching {

@@ -8,10 +8,10 @@ import CoreData
 import SwiftUI
 import os.log
 
-struct VolumeTeaserView: View {
+struct SearchResultTeaserView: View {
     @Environment(\.managedObjectContext) var managedObjectContext: NSManagedObjectContext
     
-    @State private var isPresentingSheet: Bool = false
+    @State private var isPresentindDetail: Bool = false
     
     var volume: VolumeApiModel
     
@@ -21,48 +21,48 @@ struct VolumeTeaserView: View {
                 HStack(alignment: .top) {
                     Text("Title")
                         .foregroundColor(.Secondary.opacity(50))
-                        
+                    
                     Text(volume.volumeInfo?.title ?? "title unknown")
                     Spacer()
                 }
                 HStack(alignment: .top) {
                     Text("Authors")
                         .foregroundColor(.Secondary.opacity(50))
-                        
+                    
                     Text(volume.volumeInfo?.authors?.joined(separator: "; ") ?? "authors unknown")
                     Spacer()
                 }
                 HStack(alignment: .top) {
                     Text("Publisher")
                         .foregroundColor(.Secondary.opacity(50))
-                        
+                    
                     Text(volume.volumeInfo?.publisher ?? "publisher unknown")
                     Spacer()
                 }
                 Divider()
             }
-            Button {
-                isPresentingSheet.toggle()
-            } label: {
-                Label("Add", systemImage: "plus.circle.fill")
-            }
-
-        }.padding()
-            .sheet(isPresented: $isPresentingSheet, onDismiss: onDismiss) {
+        }
+        .padding()
+        .onTapGesture {
+            isPresentindDetail.toggle()
+        }
+        .sheet(isPresented: $isPresentindDetail, onDismiss: onDismiss) {
+            HStack{
                 VStack(alignment: .leading) {
-                    Text(volume.volumeInfo?.title ?? "title unknown")
-                    Text(volume.volumeInfo?.subtitle ?? "title unknown")
-                }.padding()
-                Button {
-                   storeBook()
-                } label: {
-                    Label("Save to Library", systemImage: "checkmark.shield")
-                        .padding()
+                    SearchResultView(searchResult: volume)
+                        .padding(.all, 0)
                 }
-
+                Spacer()
             }
+            Spacer()
+            Button {
+                storeBook()
+            } label: {
+                Label("Save to Library", systemImage: "books.vertical.circle")
+            }.buttonStyle(RoundedCordnerButtonStyle())
+        }
     }
-
+    
     private func onDismiss() {
         
     }
@@ -79,7 +79,7 @@ struct VolumeTeaserView: View {
         
         do {
             try managedObjectContext.save()
-            isPresentingSheet.toggle()
+            isPresentindDetail.toggle()
         } catch {
             os_log("Error when saving volume as book: %{public}@", log: .data, type: .error, error.localizedDescription)
         }

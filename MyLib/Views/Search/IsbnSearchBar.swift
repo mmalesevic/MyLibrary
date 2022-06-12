@@ -39,6 +39,8 @@ struct IsbnSearchBar: View {
                 .padding()
                 .foregroundColor(Color.Primary)
                 .tint(Color.Primary)
+                .overlay(Rectangle().frame(height: 1).padding(.top, 25).padding(.horizontal, 12))
+                .foregroundColor(.white)
                 .onAppear() {
 #if targetEnvironment(simulator)
                     searchTerm = "978-3-630-87473-9"

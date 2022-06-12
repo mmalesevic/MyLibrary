@@ -16,10 +16,14 @@ class ApiRequest: NSObject, ApiRequestProtocol {
     
     let session: URLSessionProtocol
     let responseInterceptor: APIResponseInterceptorProtocol
+    let dateFormatter: DateFormatter
     
     init(urlSession: URLSessionProtocol, responseInterceptor: APIResponseInterceptorProtocol) {
         self.session = urlSession
         self.responseInterceptor = responseInterceptor
+        self.dateFormatter = DateFormatter()
+        // 2019-03-18
+        dateFormatter.dateFormat = "yyyy-MM-dd"
     }
     
     internal func getRequest<T: Codable>(_ url:URL?) async throws -> T {
@@ -36,7 +40,9 @@ class ApiRequest: NSObject, ApiRequestProtocol {
         
         do {
             os_log("JSON Response: %@", log: OSLog.api, type: .debug, data.prettyPrintedJSONString)
-            let responseObjecct = try JSONDecoder().decode(T.self, from: data)
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let responseObjecct = try decoder.decode(T.self, from: data)
             return responseObjecct
         } catch DecodingError.typeMismatch( _, let context) {
             os_log("parsing error, type mismatch error: %@", log: OSLog.api, type: .error, "\(context.codingPath)")

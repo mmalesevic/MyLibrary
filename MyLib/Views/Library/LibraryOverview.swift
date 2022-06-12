@@ -13,13 +13,24 @@ struct LibraryOverview: View {
     var body: some View {
         VStack {
             TextField("", text: $searchTerm)
+                
+                .padding(.horizontal, 15)
                 .padding()
                 .foregroundColor(.Primary)
-                .background(Color.Secondary)
                 .tint(.Primary)
+                .background(Color.Secondary)
+                .cornerRadius(35, corners: [.bottomLeft, .bottomRight])
+                .overlay(Rectangle().frame(height: 1).padding(.top, 25).padding(.horizontal, 26))
+                .foregroundColor(.white)
+                .overlay(alignment: .top, content: {
+                    Color.Secondary
+                        .background(.regularMaterial)
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: 0)
+                })
                 .onAppear() {
 #if targetEnvironment(simulator)
-                    searchTerm = "Book"
+                    searchTerm = "Herkunft"
 #endif
                 }
             QueryList(filterKey: "title", filterValue: searchTerm) { (book: Book) in
@@ -27,7 +38,6 @@ struct LibraryOverview: View {
                     Text(book.title ?? "unknown title")
                     Text(book.subtitle ?? "no subtitle")
                 }
-                .background(.yellow)
             }
             Spacer()
             
