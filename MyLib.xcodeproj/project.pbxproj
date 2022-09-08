@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5C286D3D2833FC34004EDCEF /* VolumeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */; };
 		5C286D402833FEB4004EDCEF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C286D3F2833FEB4004EDCEF /* Validator.swift */; };
+		5C36AC792838080100A01082 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C36AC782838080100A01082 /* SearchView.swift */; };
 		5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C41924227ED00A40057969E /* OSLog+Extension.swift */; };
 		5C5F32EB2836C738006B32CC /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F32EA2836C738006B32CC /* ValidatorTests.swift */; };
 		5C5F32ED2836CD7B006B32CC /* VolumeApiModel_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */; };
@@ -16,13 +17,17 @@
 		5C791E3127D21B4000D673BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3027D21B4000D673BA /* ContentView.swift */; };
 		5C791E3327D21B4600D673BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C791E3227D21B4600D673BA /* Assets.xcassets */; };
 		5C791E3627D21B4600D673BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C791E3527D21B4600D673BA /* Preview Assets.xcassets */; };
-		5C791E3827D21B4600D673BA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3727D21B4600D673BA /* Persistence.swift */; };
 		5C791E3B27D21B4600D673BA /* MyLib.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */; };
 		5C791E4F27D21B4600D673BA /* MyLibUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E4E27D21B4600D673BA /* MyLibUITests.swift */; };
 		5C791E5127D21B4600D673BA /* MyLibUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E5027D21B4600D673BA /* MyLibUITestsLaunchTests.swift */; };
 		5C791E6027D21B9A00D673BA /* VolumeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E5F27D21B9A00D673BA /* VolumeApiModel.swift */; };
 		5C791E6227D21F3F00D673BA /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6127D21F3F00D673BA /* ApiRequest.swift */; };
 		5C791E6427D2203200D673BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6327D2203200D673BA /* ApiError.swift */; };
+		5C8C9B8D285676A50053FDF8 /* RoundedCornerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C9B8C285676A50053FDF8 /* RoundedCornerButtonStyle.swift */; };
+		5C8C9B8F2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8C9B8E2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json */; };
+		5C8CF343283D351600721E9B /* QueryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CF342283D351600721E9B /* QueryList.swift */; };
+		5CA3D595283E93BF001C4C97 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3D594283E93BF001C4C97 /* SearchResultView.swift */; };
+		5CA3D59728440464001C4C97 /* DateFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3D59628440464001C4C97 /* DateFormat+Extensions.swift */; };
 		5CB1EA96282D92FD00189968 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1EA95282D92FD00189968 /* JSONDecoder+Extensions.swift */; };
 		5CB1EA97282D957900189968 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1EA95282D92FD00189968 /* JSONDecoder+Extensions.swift */; };
 		5CB1EA99282D96B000189968 /* APIRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1EA98282D96B000189968 /* APIRequestTests.swift */; };
@@ -30,12 +35,16 @@
 		5CB1EA9E28318D4300189968 /* APIResponseInterceptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1EA9D28318D4300189968 /* APIResponseInterceptorTests.swift */; };
 		5CB1EAA0283194C800189968 /* MockUrlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB1EA9F283194C800189968 /* MockUrlSession.swift */; };
 		5CB1EAA42831995D00189968 /* VolumeApiModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CB1EAA32831995D00189968 /* VolumeApiModel.json */; };
+		5CB7EBFA2838106000231889 /* LibraryOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7EBF92838106000231889 /* LibraryOverview.swift */; };
+		5CB7EBFD283813D500231889 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB7EBFC283813D500231889 /* DataController.swift */; };
 		5CC1E499282450C900884A16 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC1E498282450C900884A16 /* CodeScanner */; };
-		5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1E49B2824517E00884A16 /* SearchBar.swift */; };
+		5CC1E49C2824517E00884A16 /* IsbnSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC1E49B2824517E00884A16 /* IsbnSearchBar.swift */; };
+		5CC594F8283C25B100E6D285 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC594F7283C25B100E6D285 /* View+Extensions.swift */; };
+		5CC594FB283C25E100E6D285 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC594FA283C25E100E6D285 /* RoundedCorner.swift */; };
 		5CCB0ED3282072BB0051DC6F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */; };
 		5CCB0ED5282076030051DC6F /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED4282076030051DC6F /* Data+Extensions.swift */; };
 		5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */; };
-		5CCB0EDB282086050051DC6F /* BookTeaserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0EDA282086050051DC6F /* BookTeaserView.swift */; };
+		5CCB0EDB282086050051DC6F /* SearchResultTeaserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCB0EDA282086050051DC6F /* SearchResultTeaserView.swift */; };
 		5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3137027D2247D008F0136 /* URLSession+Extensions.swift */; };
 		5CF3137427D2423C008F0136 /* VolumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3137327D2423C008F0136 /* VolumeViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +69,7 @@
 /* Begin PBXFileReference section */
 		5C286D3C2833FC34004EDCEF /* VolumeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModelTest.swift; sourceTree = "<group>"; };
 		5C286D3F2833FEB4004EDCEF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		5C36AC782838080100A01082 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		5C41924227ED00A40057969E /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
 		5C5F32EA2836C738006B32CC /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VolumeApiModel_empty.json; sourceTree = "<group>"; };
@@ -68,7 +78,6 @@
 		5C791E3027D21B4000D673BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5C791E3227D21B4600D673BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C791E3527D21B4600D673BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5C791E3727D21B4600D673BA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		5C791E3A27D21B4600D673BA /* MyLib.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyLib.xcdatamodel; sourceTree = "<group>"; };
 		5C791E4027D21B4600D673BA /* MyLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C791E4A27D21B4600D673BA /* MyLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,18 +86,28 @@
 		5C791E5F27D21B9A00D673BA /* VolumeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeApiModel.swift; sourceTree = "<group>"; };
 		5C791E6127D21F3F00D673BA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		5C791E6327D2203200D673BA /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		5C8C9B8C285676A50053FDF8 /* RoundedCornerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButtonStyle.swift; sourceTree = "<group>"; };
+		5C8C9B8E2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JRR_Tolkien_The_Hobbit.json; sourceTree = "<group>"; };
+		5C8C9B9028567A2F0053FDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C8CF342283D351600721E9B /* QueryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryList.swift; sourceTree = "<group>"; };
+		5CA3D594283E93BF001C4C97 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
+		5CA3D59628440464001C4C97 /* DateFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extensions.swift"; sourceTree = "<group>"; };
 		5CB1EA95282D92FD00189968 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 		5CB1EA98282D96B000189968 /* APIRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestTests.swift; sourceTree = "<group>"; };
 		5CB1EA9B283189F800189968 /* APIResponseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseInterceptor.swift; sourceTree = "<group>"; };
 		5CB1EA9D28318D4300189968 /* APIResponseInterceptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseInterceptorTests.swift; sourceTree = "<group>"; };
 		5CB1EA9F283194C800189968 /* MockUrlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUrlSession.swift; sourceTree = "<group>"; };
 		5CB1EAA32831995D00189968 /* VolumeApiModel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = VolumeApiModel.json; sourceTree = "<group>"; };
-		5CC1E49B2824517E00884A16 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		5CB7EBF92838106000231889 /* LibraryOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryOverview.swift; sourceTree = "<group>"; };
+		5CB7EBFC283813D500231889 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		5CC1E49B2824517E00884A16 /* IsbnSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsbnSearchBar.swift; sourceTree = "<group>"; };
 		5CC1E49D282908E500884A16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5CC594F7283C25B100E6D285 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		5CC594FA283C25E100E6D285 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		5CCB0ED4282076030051DC6F /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		5CCB0EDA282086050051DC6F /* BookTeaserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTeaserView.swift; sourceTree = "<group>"; };
+		5CCB0EDA282086050051DC6F /* SearchResultTeaserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTeaserView.swift; sourceTree = "<group>"; };
 		5CF3137027D2247D008F0136 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		5CF3137327D2423C008F0136 /* VolumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +149,7 @@
 		5C286D3E2833FEA0004EDCEF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5CC594F9283C25D100E6D285 /* UI */,
 				5C286D3F2833FEB4004EDCEF /* Validator.swift */,
 			);
 			path = Util;
@@ -142,6 +162,8 @@
 				5CCB0ED2282072BB0051DC6F /* Color+Extension.swift */,
 				5CCB0ED4282076030051DC6F /* Data+Extensions.swift */,
 				5CB1EA95282D92FD00189968 /* JSONDecoder+Extensions.swift */,
+				5CC594F7283C25B100E6D285 /* View+Extensions.swift */,
+				5CA3D59628440464001C4C97 /* DateFormat+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -178,16 +200,16 @@
 		5C791E2D27D21B4000D673BA /* MyLib */ = {
 			isa = PBXGroup;
 			children = (
-				5C286D3E2833FEA0004EDCEF /* Util */,
-				5CB1EAA12831991E00189968 /* Resources */,
-				5C791E5D27D21B4F00D673BA /* API */,
-				5C41924127ED00880057969E /* Extensions */,
-				5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */,
+				5C8C9B9028567A2F0053FDF8 /* Info.plist */,
 				5C791E2E27D21B4000D673BA /* MyLibApp.swift */,
-				5C791E3727D21B4600D673BA /* Persistence.swift */,
-				5C791E3427D21B4600D673BA /* Preview Content */,
-				5CF3137227D2421A008F0136 /* ViewModel */,
 				5CCB0ED6282077D40051DC6F /* Views */,
+				5CF3137227D2421A008F0136 /* ViewModel */,
+				5C791E5D27D21B4F00D673BA /* API */,
+				5CB7EBFB2838139A00231889 /* Data */,
+				5C286D3E2833FEA0004EDCEF /* Util */,
+				5C41924127ED00880057969E /* Extensions */,
+				5CB1EAA12831991E00189968 /* Resources */,
+				5C791E3427D21B4600D673BA /* Preview Content */,
 			);
 			path = MyLib;
 			sourceTree = "<group>";
@@ -236,6 +258,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5C8C9B8A285676800053FDF8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5C8C9B8B2856768A0053FDF8 /* Styles */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5C8C9B8B2856768A0053FDF8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				5C8C9B8C285676A50053FDF8 /* RoundedCornerButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		5CB1EA91282D8DD200189968 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,35 +309,58 @@
 			children = (
 				5CB1EAA32831995D00189968 /* VolumeApiModel.json */,
 				5C5F32EC2836CD7B006B32CC /* VolumeApiModel_empty.json */,
+				5C8C9B8E2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
 		};
-		5CC1E49A2824516E00884A16 /* SearchBar */ = {
+		5CB7EBF82838104000231889 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				5CC1E49B2824517E00884A16 /* SearchBar.swift */,
+				5CB7EBF92838106000231889 /* LibraryOverview.swift */,
+				5C8CF342283D351600721E9B /* QueryList.swift */,
 			);
-			path = SearchBar;
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5CB7EBFB2838139A00231889 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */,
+				5CB7EBFC283813D500231889 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5CC1E49A2824516E00884A16 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5CC1E49B2824517E00884A16 /* IsbnSearchBar.swift */,
+				5C36AC782838080100A01082 /* SearchView.swift */,
+				5CCB0EDA282086050051DC6F /* SearchResultTeaserView.swift */,
+				5CA3D594283E93BF001C4C97 /* SearchResultView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5CC594F9283C25D100E6D285 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5CC594FA283C25E100E6D285 /* RoundedCorner.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		5CCB0ED6282077D40051DC6F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5CCB0ED7282077DA0051DC6F /* Shared */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5CCB0ED7282077DA0051DC6F /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				5CC1E49A2824516E00884A16 /* SearchBar */,
+				5C8C9B8A285676800053FDF8 /* Shared */,
 				5C791E3027D21B4000D673BA /* ContentView.swift */,
 				5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */,
-				5CCB0EDA282086050051DC6F /* BookTeaserView.swift */,
+				5CC1E49A2824516E00884A16 /* Search */,
+				5CB7EBF82838104000231889 /* Library */,
 			);
-			path = Shared;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5CF3137227D2421A008F0136 /* ViewModel */ = {
@@ -420,6 +481,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8C9B8F2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json in Resources */,
 				5C791E3627D21B4600D673BA /* Preview Assets.xcassets in Resources */,
 				5CB1EAA42831995D00189968 /* VolumeApiModel.json in Resources */,
 				5C5F32ED2836CD7B006B32CC /* VolumeApiModel_empty.json in Resources */,
@@ -449,15 +511,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CB1EAA0283194C800189968 /* MockUrlSession.swift in Sources */,
+				5C8C9B8D285676A50053FDF8 /* RoundedCornerButtonStyle.swift in Sources */,
+				5C8CF343283D351600721E9B /* QueryList.swift in Sources */,
 				5CF3137127D2247D008F0136 /* URLSession+Extensions.swift in Sources */,
+				5CC594F8283C25B100E6D285 /* View+Extensions.swift in Sources */,
 				5C791E6427D2203200D673BA /* ApiError.swift in Sources */,
 				5CB1EA96282D92FD00189968 /* JSONDecoder+Extensions.swift in Sources */,
-				5CC1E49C2824517E00884A16 /* SearchBar.swift in Sources */,
+				5CC1E49C2824517E00884A16 /* IsbnSearchBar.swift in Sources */,
+				5CB7EBFA2838106000231889 /* LibraryOverview.swift in Sources */,
+				5CA3D59728440464001C4C97 /* DateFormat+Extensions.swift in Sources */,
+				5CC594FB283C25E100E6D285 /* RoundedCorner.swift in Sources */,
 				5C791E6027D21B9A00D673BA /* VolumeApiModel.swift in Sources */,
-				5C791E3827D21B4600D673BA /* Persistence.swift in Sources */,
+				5CB7EBFD283813D500231889 /* DataController.swift in Sources */,
 				5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */,
-				5CCB0EDB282086050051DC6F /* BookTeaserView.swift in Sources */,
+				5CCB0EDB282086050051DC6F /* SearchResultTeaserView.swift in Sources */,
 				5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */,
+				5C36AC792838080100A01082 /* SearchView.swift in Sources */,
 				5CB1EA9C283189F800189968 /* APIResponseInterceptor.swift in Sources */,
 				5C791E3127D21B4000D673BA /* ContentView.swift in Sources */,
 				5C286D402833FEB4004EDCEF /* Validator.swift in Sources */,
@@ -467,6 +536,7 @@
 				5CCB0ED5282076030051DC6F /* Data+Extensions.swift in Sources */,
 				5CCB0ED3282072BB0051DC6F /* Color+Extension.swift in Sources */,
 				5C791E3B27D21B4600D673BA /* MyLib.xcdatamodeld in Sources */,
+				5CA3D595283E93BF001C4C97 /* SearchResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +704,7 @@
 				DEVELOPMENT_TEAM = AN4B7258WJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyLib/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for ISBN-Code Scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -664,6 +735,7 @@
 				DEVELOPMENT_TEAM = AN4B7258WJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyLib/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera is used for ISBN-Code Scanning";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

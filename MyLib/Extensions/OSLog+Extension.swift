@@ -12,4 +12,5 @@ extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier ?? "ch.malesevic.MyLib"
     
     static var api = OSLog(subsystem: subsystem, category: "api")
+    static var data = OSLog(subsystem: subsystem, category: "data")
 }

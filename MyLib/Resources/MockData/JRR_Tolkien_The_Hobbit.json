@@ -1,0 +1,77 @@
+{
+  "kind" : "books#volumes",
+  "totalItems" : 1,
+  "items" : [
+    {
+      "selfLink" : "https:\/\/books.googleapis.com\/books\/v1\/volumes\/LLSpngEACAAJ",
+      "volumeInfo" : {
+        "ratingsCount" : 2580,
+        "averageRating" : 4,
+        "publisher" : "Mariner Books",
+        "industryIdentifiers" : [
+          {
+            "type" : "ISBN_10",
+            "identifier" : "054792822X"
+          },
+          {
+            "type" : "ISBN_13",
+            "identifier" : "9780547928227"
+          }
+        ],
+        "title" : "The Hobbit, Or, There and Back Again",
+        "readingModes" : {
+          "image" : false,
+          "text" : false
+        },
+        "language" : "en",
+        "infoLink" : "http:\/\/books.google.ch\/books?id=LLSpngEACAAJ&dq=isbn:9780547928227&hl=&source=gbs_api",
+        "imageLinks" : {
+          "thumbnail" : "http:\/\/books.google.com\/books\/content?id=LLSpngEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+          "smallThumbnail" : "http:\/\/books.google.com\/books\/content?id=LLSpngEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
+        },
+        "allowAnonLogging" : false,
+        "printType" : "BOOK",
+        "authors" : [
+          "J. R. R. Tolkien"
+        ],
+        "pageCount" : 300,
+        "maturityRating" : "NOT_MATURE",
+        "contentVersion" : "preview-1.0.0",
+        "publishedDate" : "2012",
+        "previewLink" : "http:\/\/books.google.ch\/books?id=LLSpngEACAAJ&dq=isbn:9780547928227&hl=&cd=1&source=gbs_api",
+        "canonicalVolumeLink" : "https:\/\/books.google.com\/books\/about\/The_Hobbit_Or_There_and_Back_Again.html?hl=&id=LLSpngEACAAJ",
+        "categories" : [
+          "Juvenile Fiction"
+        ],
+        "description" : "Celebrating 75 years of one of the world's most treasured classics with an all new trade paperback edition. Repackaged with new cover art. 500,000 first printing."
+      },
+      "id" : "LLSpngEACAAJ",
+      "saleInfo" : {
+        "country" : "CH",
+        "saleability" : "NOT_FOR_SALE",
+        "isEbook" : false
+      },
+      "accessInfo" : {
+        "viewability" : "NO_PAGES",
+        "publicDomain" : false,
+        "country" : "CH",
+        "accessViewStatus" : "NONE",
+        "webReaderLink" : "http:\/\/play.google.com\/books\/reader?id=LLSpngEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "quoteSharingAllowed" : false,
+        "textToSpeechPermission" : "ALLOWED",
+        "pdf" : {
+          "isAvailable" : false
+        },
+        "embeddable" : false,
+        "epub" : {
+          "isAvailable" : false
+        }
+      },
+      "searchInfo" : {
+        "textSnippet" : "Celebrating 75 years of one of the world&#39;s most treasured classics with an all new trade paperback edition. Repackaged with new cover art. 500,000 first printing."
+      },
+      "kind" : "books#volume",
+      "etag" : "dGrYHByqqmc"
+    }
+  ]
+}

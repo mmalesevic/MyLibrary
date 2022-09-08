@@ -9,14 +9,14 @@ import SwiftUI
 
 @main
 struct MyLibApp: App {
-    let persistenceController = PersistenceController.shared
 
     let apiRequest = ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())
+    @StateObject var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(VolumeViewModel(apiRequest: apiRequest))
         }
     }

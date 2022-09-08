@@ -8,8 +8,17 @@
 import SwiftUI
 import CodeScanner
 
-struct SearchBar: View {
+enum SearchType {
+    case api
+    case library
+}
+
+struct IsbnSearchBar: View {
+    
     @EnvironmentObject var volumeVM: VolumeViewModel
+    
+    @Binding var isSearching: Bool
+    @Binding var searchResults: [VolumeApiModel]
     
     @State private var searchTerm: String = ""
     @State private var lookupError: Error? = nil
@@ -30,12 +39,15 @@ struct SearchBar: View {
                 .padding()
                 .foregroundColor(Color.Primary)
                 .tint(Color.Primary)
+                .overlay(Rectangle().frame(height: 1).padding(.top, 25).padding(.horizontal, 12))
+                .foregroundColor(.white)
                 .onAppear() {
-#if DEBUG
+#if targetEnvironment(simulator)
                     searchTerm = "978-3-630-87473-9"
 #endif
                 }
             Button {
+                isSearching = true
                 Task {
                     await search(for: searchTerm)
                 }
@@ -48,24 +60,26 @@ struct SearchBar: View {
             .alert(lookupError.debugDescription, isPresented: $displayError) {
                 Text("ok")
             }
-        }.background(Color.Secondary)
-            .sheet(isPresented: $presentScanner) {
-                CodeScannerView(codeTypes: [.ean13, .ean8, .code128], simulatedData: "9783754384299") { result in
-                    scannerHandler(result: result)
-                }
+        }
+        .background(Color.Secondary)
+        .cornerRadius(35, corners: [.bottomLeft, .bottomRight])
+        .sheet(isPresented: $presentScanner) {
+            CodeScannerView(codeTypes: [.ean13, .ean8, .code128], simulatedData: "9783754384299") { result in
+                scannerHandler(result: result)
             }
+        }
     }
     
     private func search(for term: String) async {
         do {
-            try await volumeVM.lookupISBN(term)
-            print(volumeVM.volumes)
+            searchResults = try await volumeVM.lookupISBN(term)
+            isSearching = false
         }
-        catch ApiError.noResult{
-            
+        catch ApiError.noResult {
+            isSearching = false
         }
         catch let error {
-            volumeVM.isSearching = false
+            self.isSearching = false
             self.displayError = true
             self.lookupError = error
             
@@ -84,14 +98,14 @@ struct SearchBar: View {
             }
         }
     }
-    
-    
 }
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar()
-            .environmentObject(VolumeViewModel(apiRequest: ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())))
-            .previewLayout(.sizeThatFits)
+        Group{
+            IsbnSearchBar(isSearching: .constant(false), searchResults: .constant([VolumeApiModel]()))
+                .environmentObject(VolumeViewModel(apiRequest: ApiRequest(urlSession: URLSession.shared, responseInterceptor: APIResponseInterceptor())))
+                .previewLayout(.sizeThatFits)
+        }
     }
 }

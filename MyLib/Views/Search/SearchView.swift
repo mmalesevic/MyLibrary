@@ -1,30 +1,33 @@
 //
-//  ContentView.swift
+//  SearchView.swift
 //  MyLib
 //
-//  Created by Matej Malesevic on 04.03.22.
+//  Created by Matej Malesevic on 20.05.22.
 //
 
 import SwiftUI
-import CoreData
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    
-    @EnvironmentObject var volumeVM: VolumeViewModel
-    
-    
+struct SearchView: View {
+    @State private var isSearching: Bool = false
+    @State private var searchResults: [VolumeApiModel] = [VolumeApiModel]()
     
     var body: some View {
         VStack{
+            IsbnSearchBar(isSearching: $isSearching, searchResults: $searchResults)
+                .overlay(alignment: .top, content: {
+                    Color.Secondary
+                        .background(.regularMaterial)
+                        .edgesIgnoringSafeArea(.top)
+                        .frame(height: 0)
+                })
             Section{
-                if volumeVM.volumes.count > 0 {
+                if searchResults.count > 0 {
                     ScrollView{
-                    ForEach(volumeVM.volumes) { volume in
-                        BookTeaserView(volume: volume)
+                    ForEach(searchResults) { volume in
+                        SearchResultTeaserView(volume: volume)
                     }}
                 } else {
-                    if volumeVM.isSearching {
+                    if isSearching {
                         Spacer()
                         ActivityIndicator()
                             .frame(width: 50, height: 50, alignment: .center)
@@ -38,23 +41,15 @@ struct ContentView: View {
                     }
                 }
             }
-            HStack{
-                SearchBar()
-            }
-            .background(Color.Secondary)
-            .cornerRadius(25)
-            
         }.background(Color.Primary)
     }
-    
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         let api = ApiRequest(urlSession: URLSession(configuration: URLSessionConfiguration.default), responseInterceptor: APIResponseInterceptor())
         
-        return ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        return SearchView()
             .environmentObject(VolumeViewModel(apiRequest: api))
     }
 }

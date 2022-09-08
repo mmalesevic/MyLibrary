@@ -13,14 +13,7 @@ struct VolumeApiModel: Codable, Identifiable  {
     var kind: String?
     var id: String?
     var etag: String?
-//    var pageCount: Int?
-//    var printedPageCount: Int?
-//    var dimensions: [String:String]?
-//    var printType: String?
-//    var categories: [String]?
-//    var maturityRating: String?
-//    var language: String?
-//    var saleInfo: SaleInfo?
+    var searchInfo: SearchInfo?
 }
 
 extension VolumeApiModel {
@@ -36,8 +29,20 @@ struct VolumeInfoApiModel: Codable {
     var subtitle: String?
     var authors: [String]?
     var publisher: String?
-    //var publishedDate: Date?
+    var publishedDate: String?
     var industryIdentifiers: [IndustryIdentifiersApiModel]?
+    var imageLinks: ImageLinks?
+    var pageCount: Int?
+    var language: String?
+}
+
+struct ImageLinks: Codable {
+    var smallThumbnail: URL?
+    var thumbnail: URL?
+    var small: URL?
+    var medium: URL?
+    var large: URL?
+    var extraLarge: URL?
 }
 
 struct IndustryIdentifiersApiModel: Codable {
@@ -49,4 +54,8 @@ struct SaleInfoApiModel: Codable {
     var country: String?
     var saleability: String?
     var isEbook: Bool?
+}
+
+struct SearchInfo: Codable {
+    var textSnippet: String?
 }
