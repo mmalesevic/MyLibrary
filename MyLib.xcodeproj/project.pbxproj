@@ -25,6 +25,8 @@
 		5C791E6427D2203200D673BA /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C791E6327D2203200D673BA /* ApiError.swift */; };
 		5C8C9B8D285676A50053FDF8 /* RoundedCornerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C9B8C285676A50053FDF8 /* RoundedCornerButtonStyle.swift */; };
 		5C8C9B8F2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8C9B8E2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json */; };
+		5C8C9B9228568DE30053FDF8 /* VolumeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C9B9128568DE30053FDF8 /* VolumeImageView.swift */; };
+		5C8C9B9428568F670053FDF8 /* Book+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C9B9328568F670053FDF8 /* Book+Extensions.swift */; };
 		5C8CF343283D351600721E9B /* QueryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8CF342283D351600721E9B /* QueryList.swift */; };
 		5CA3D595283E93BF001C4C97 /* SearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3D594283E93BF001C4C97 /* SearchResultView.swift */; };
 		5CA3D59728440464001C4C97 /* DateFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA3D59628440464001C4C97 /* DateFormat+Extensions.swift */; };
@@ -89,6 +91,8 @@
 		5C8C9B8C285676A50053FDF8 /* RoundedCornerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButtonStyle.swift; sourceTree = "<group>"; };
 		5C8C9B8E2856791F0053FDF8 /* JRR_Tolkien_The_Hobbit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JRR_Tolkien_The_Hobbit.json; sourceTree = "<group>"; };
 		5C8C9B9028567A2F0053FDF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C8C9B9128568DE30053FDF8 /* VolumeImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeImageView.swift; sourceTree = "<group>"; };
+		5C8C9B9328568F670053FDF8 /* Book+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+Extensions.swift"; sourceTree = "<group>"; };
 		5C8CF342283D351600721E9B /* QueryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryList.swift; sourceTree = "<group>"; };
 		5CA3D594283E93BF001C4C97 /* SearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultView.swift; sourceTree = "<group>"; };
 		5CA3D59628440464001C4C97 /* DateFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extensions.swift"; sourceTree = "<group>"; };
@@ -261,7 +265,10 @@
 		5C8C9B8A285676800053FDF8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5C791E3027D21B4000D673BA /* ContentView.swift */,
+				5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */,
 				5C8C9B8B2856768A0053FDF8 /* Styles */,
+				5C8C9B9128568DE30053FDF8 /* VolumeImageView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -328,6 +335,7 @@
 			children = (
 				5C791E3927D21B4600D673BA /* MyLib.xcdatamodeld */,
 				5CB7EBFC283813D500231889 /* DataController.swift */,
+				5C8C9B9328568F670053FDF8 /* Book+Extensions.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -355,8 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				5C8C9B8A285676800053FDF8 /* Shared */,
-				5C791E3027D21B4000D673BA /* ContentView.swift */,
-				5CCB0ED8282077EB0051DC6F /* ActivityIndicator.swift */,
 				5CC1E49A2824516E00884A16 /* Search */,
 				5CB7EBF82838104000231889 /* Library */,
 			);
@@ -523,6 +529,7 @@
 				5CC594FB283C25E100E6D285 /* RoundedCorner.swift in Sources */,
 				5C791E6027D21B9A00D673BA /* VolumeApiModel.swift in Sources */,
 				5CB7EBFD283813D500231889 /* DataController.swift in Sources */,
+				5C8C9B9428568F670053FDF8 /* Book+Extensions.swift in Sources */,
 				5CCB0ED9282077EB0051DC6F /* ActivityIndicator.swift in Sources */,
 				5CCB0EDB282086050051DC6F /* SearchResultTeaserView.swift in Sources */,
 				5C41924327ED00A40057969E /* OSLog+Extension.swift in Sources */,
@@ -536,6 +543,7 @@
 				5CCB0ED5282076030051DC6F /* Data+Extensions.swift in Sources */,
 				5CCB0ED3282072BB0051DC6F /* Color+Extension.swift in Sources */,
 				5C791E3B27D21B4600D673BA /* MyLib.xcdatamodeld in Sources */,
+				5C8C9B9228568DE30053FDF8 /* VolumeImageView.swift in Sources */,
 				5CA3D595283E93BF001C4C97 /* SearchResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

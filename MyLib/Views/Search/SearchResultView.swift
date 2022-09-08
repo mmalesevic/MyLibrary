@@ -14,28 +14,7 @@ struct SearchResultView: View {
         VStack (alignment:.leading) {
             HStack(alignment: .top) {
                 
-                if let url = searchResult.volumeInfo?.imageLinks?.thumbnail {
-                    AsyncImage(url: url)
-                        .frame(width: 100, height: 150)
-                        .aspectRatio(2/3, contentMode: .fill)
-                        .cornerRadius(35, corners: [.topLeft, .bottomRight])
-                        .padding()
-                } else {
-                    ZStack{
-                        Rectangle()
-                            .foregroundColor(.Secondary)
-                            .cornerRadius(25, corners: [.topLeft, .bottomRight])
-                        Image(systemName: "book.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 80)
-                            .foregroundColor(.Primary)
-                            
-                        
-                    }.frame(width: 100, height: 150)
-                        .aspectRatio(2/3, contentMode: .fill)
-                        .padding()
-                }
+                VolumeImageView(url: searchResult.volumeInfo?.thumbnailUrl)
                 
                 VStack (alignment:.leading) {
                     Text(searchResult.volumeInfo?.title ?? "-")
@@ -62,7 +41,7 @@ struct SearchResultView: View {
                     Text("Pages: \(pagecount)")
                         .font(.body)
                 }
-                if let isbnEntry = searchResult.volumeInfo?.industryIdentifiers?.first(where: {$0.type == "ISBN_13"})?.identifier {
+                if let isbnEntry = searchResult.volumeInfo?.isbn13 {
                     Text("ISBN: \(isbnEntry)")
                         .font(.body)
                 }
