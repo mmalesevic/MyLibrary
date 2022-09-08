@@ -13,7 +13,6 @@ struct LibraryOverview: View {
     var body: some View {
         VStack {
             TextField("", text: $searchTerm)
-                
                 .padding(.horizontal, 15)
                 .padding()
                 .foregroundColor(.Primary)
@@ -34,13 +33,14 @@ struct LibraryOverview: View {
 #endif
                 }
             QueryList(filterKey: "title", filterValue: searchTerm) { (book: Book) in
-                VStack{
-                    Text(book.title ?? "unknown title")
-                    Text(book.subtitle ?? "no subtitle")
+                HStack(alignment: .top) {
+                    VolumeImageView(url: URL(string: book.thumbnailUrl ?? ""))
+                    VStack(alignment: .leading) {
+                        Text(book.title ?? "unknown title")
+                        Text(book.subtitle ?? "no subtitle")
+                    }.padding(.top)
                 }
             }
-            Spacer()
-            
         }
     }
 }
